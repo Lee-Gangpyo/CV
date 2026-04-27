@@ -150,41 +150,43 @@ const Network = () => {
                     </div>
 
                     {/* Center Column: Map */}
-                    <div className="lg:col-span-6 order-1 lg:order-2 relative aspect-[4/5] md:aspect-video lg:aspect-[3/4] bg-[#0F172A] rounded-3xl border border-white/5 overflow-hidden shadow-2xl group/map z-10">
-                        {/* Map Background Image */}
-                        <img
-                            src="/assets/korea_map_geo_v2.png"
-                            alt="Map of South Korea"
-                            className="absolute inset-0 w-full h-full object-contain opacity-90"
-                        />
+                    <div className="lg:col-span-6 order-1 lg:order-2 flex justify-center items-center bg-[#0F172A] rounded-3xl border border-white/5 overflow-hidden shadow-2xl p-4 md:p-8 z-10 group/map">
+                        <div className="relative w-full max-w-lg mx-auto">
+                            {/* Map Background Image */}
+                            <img
+                                src="/assets/korea_map_geo_v2.png"
+                                alt="Map of South Korea"
+                                className="w-full h-auto opacity-90 object-contain"
+                            />
 
-                        {/* Map Markers */}
-                        {hospitals.filter(h => h.x && h.y).map((hospital, index) => (
-                            <motion.div
-                                key={index}
-                                initial={{ scale: 0, opacity: 0 }}
-                                whileInView={{ scale: 1, opacity: 1 }}
-                                transition={{ delay: index * 0.05 }}
-                                className="absolute transform -translate-x-1/2 -translate-y-1/2 z-30"
-                                style={{ left: `${hospital.x}%`, top: `${hospital.y}%` }}
-                                onMouseEnter={() => setActiveRegion(hospital.region)}
-                                onMouseLeave={() => setActiveRegion(null)}
-                            >
-                                {/* Bright Glowing Dot */}
-                                <div className="relative group cursor-pointer">
-                                    <div className={`w-2 h-2 md:w-3 md:h-3 rounded-full bg-white shadow-[0_0_10px_rgba(255,255,255,0.8)] animate-pulse`}></div>
-                                    <div className={`absolute inset-0 rounded-full bg-white opacity-50 animate-ping`}></div>
+                            {/* Map Markers */}
+                            {hospitals.filter(h => h.x && h.y).map((hospital, index) => (
+                                <motion.div
+                                    key={index}
+                                    initial={{ scale: 0, opacity: 0 }}
+                                    whileInView={{ scale: 1, opacity: 1 }}
+                                    transition={{ delay: index * 0.05 }}
+                                    className="absolute transform -translate-x-1/2 -translate-y-1/2 z-30"
+                                    style={{ left: `${hospital.x}%`, top: `${hospital.y}%` }}
+                                    onMouseEnter={() => setActiveRegion(hospital.region)}
+                                    onMouseLeave={() => setActiveRegion(null)}
+                                >
+                                    {/* Bright Glowing Dot */}
+                                    <div className="relative group cursor-pointer">
+                                        <div className={`w-2 h-2 md:w-3 md:h-3 rounded-full bg-white shadow-[0_0_10px_rgba(255,255,255,0.8)] animate-pulse`}></div>
+                                        <div className={`absolute inset-0 rounded-full bg-white opacity-50 animate-ping`}></div>
 
-                                    {/* Tooltip on Hover */}
-                                    <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 whitespace-nowrap z-40 opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
-                                        <div className="bg-black/90 backdrop-blur-md border border-white/20 px-3 py-1.5 rounded-lg text-xs text-white font-medium flex items-center gap-2 shadow-xl">
-                                            {getIcon(hospital.type)}
-                                            {hospital.name}
+                                        {/* Tooltip on Hover */}
+                                        <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 whitespace-nowrap z-40 opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
+                                            <div className="bg-black/90 backdrop-blur-md border border-white/20 px-3 py-1.5 rounded-lg text-xs text-white font-medium flex items-center gap-2 shadow-xl">
+                                                {getIcon(hospital.type)}
+                                                {hospital.name}
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            </motion.div>
-                        ))}
+                                </motion.div>
+                            ))}
+                        </div>
                     </div>
 
                     {/* Right Column: Gangwon, Gyeongsang */}

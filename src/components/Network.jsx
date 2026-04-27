@@ -11,32 +11,32 @@ const Network = () => {
     // Names simplified to City/Location only
     const hospitals = [
         // Metropolitan (Incheon, Seoul, Gyeonggi)
-        { id: 'incheon', name: language === 'en' ? 'Incheon' : '인천', type: 'hospital', x: 28, y: 22, region: 'metro' },
-        { id: 'seoul', name: language === 'en' ? 'Seoul' : '서울', type: 'clinic', x: 32, y: 18, region: 'metro' },
-        { id: 'ansan', name: language === 'en' ? 'Ansan' : '안산', type: 'hospital', x: 30, y: 26, region: 'metro' },
-        { id: 'gyeonggi_care', name: language === 'en' ? 'Gyeonggi' : '경기', type: 'care', x: 34, y: 24, region: 'metro' },
-        { id: 'gyeonggi_nursing', name: language === 'en' ? 'Gyeonggi' : '경기', type: 'nursing', x: 36, y: 28, region: 'metro' },
+        { id: 'incheon', name: language === 'en' ? 'Incheon' : '인천', type: 'hospital', x: 27.5, y: 28.4, region: 'metro' },
+        { id: 'seoul', name: language === 'en' ? 'Seoul' : '서울', type: 'clinic', x: 38.0, y: 25.2, region: 'metro' },
+        { id: 'ansan', name: language === 'en' ? 'Ansan' : '안산', type: 'hospital', x: 38.3, y: 30.8, region: 'metro' },
+        { id: 'gyeonggi_care', name: language === 'en' ? 'Gyeonggi' : '경기', type: 'care', x: 32.8, y: 27.3, region: 'metro' },
+        { id: 'gyeonggi_nursing', name: language === 'en' ? 'Gyeonggi' : '경기', type: 'nursing', x: 33.8, y: 28.3, region: 'metro' },
 
         // Gangwon
-        { id: 'taebaek', name: language === 'en' ? 'Taebaek' : '태백', type: 'hospital', x: 72, y: 32, region: 'gangwon' },
-        { id: 'donghae', name: language === 'en' ? 'Donghae' : '동해', type: 'hospital', x: 78, y: 28, region: 'gangwon' },
-        { id: 'jeongseon', name: language === 'en' ? 'Jeongseon' : '정선', type: 'hospital', x: 68, y: 25, region: 'gangwon' },
-        { id: 'taebaek_care', name: language === 'en' ? 'Taebaek' : '태백', type: 'care', x: 74, y: 36, region: 'gangwon' },
-        { id: 'taebaek_nursing', name: language === 'en' ? 'Taebaek' : '태백', type: 'nursing', x: 72, y: 38, region: 'gangwon' },
+        { id: 'taebaek', name: language === 'en' ? 'Taebaek' : '태백', type: 'hospital', x: 64.2, y: 29.0, region: 'gangwon' },
+        { id: 'donghae', name: language === 'en' ? 'Donghae' : '동해', type: 'hospital', x: 70.3, y: 26.0, region: 'gangwon' },
+        { id: 'jeongseon', name: language === 'en' ? 'Jeongseon' : '정선', type: 'hospital', x: 68.8, y: 31.6, region: 'gangwon' },
+        { id: 'taebaek_care', name: language === 'en' ? 'Taebaek' : '태백', type: 'care', x: 65.2, y: 29.0, region: 'gangwon' },
+        { id: 'taebaek_nursing', name: language === 'en' ? 'Taebaek' : '태백', type: 'nursing', x: 66.2, y: 29.0, region: 'gangwon' },
 
         // Chungcheong
-        { id: 'daejeon', name: language === 'en' ? 'Daejeon' : '대전', type: 'hospital', x: 40, y: 45, region: 'chungcheong' },
+        { id: 'daejeon', name: language === 'en' ? 'Daejeon' : '대전', type: 'hospital', x: 43.8, y: 49.0, region: 'chungcheong' },
 
         // Jeolla
-        { id: 'gwangju', name: language === 'en' ? 'Gwangju' : '광주', type: 'clinic', x: 30, y: 65, region: 'jeolla' },
-        { id: 'suncheon', name: language === 'en' ? 'Suncheon' : '순천', type: 'hospital', x: 35, y: 75, region: 'jeolla' },
+        { id: 'gwangju', name: language === 'en' ? 'Gwangju' : '광주', type: 'clinic', x: 35.3, y: 70.0, region: 'jeolla' },
+        { id: 'suncheon', name: language === 'en' ? 'Suncheon' : '순천', type: 'hospital', x: 45.8, y: 75.3, region: 'jeolla' },
 
         // Gyeongsang
-        { id: 'daegu', name: language === 'en' ? 'Daegu' : '대구', type: 'hospital', x: 65, y: 55, region: 'gyeongsang' },
-        { id: 'gumi', name: language === 'en' ? 'Gumi' : '구미', type: 'clinic', x: 62, y: 50, region: 'gyeongsang' },
-        { id: 'ulsan', name: language === 'en' ? 'Ulsan' : '울산', type: 'future', x: 78, y: 65, region: 'gyeongsang' },
-        { id: 'changwon', name: language === 'en' ? 'Changwon' : '창원', type: 'hospital', x: 62, y: 70, region: 'gyeongsang' },
-        { id: 'busan', name: language === 'en' ? 'Busan' : '부산', type: 'clinic', x: 72, y: 74, region: 'gyeongsang' },
+        { id: 'daegu', name: language === 'en' ? 'Daegu' : '대구', type: 'hospital', x: 62.8, y: 58.4, region: 'gyeongsang' },
+        { id: 'gumi', name: language === 'en' ? 'Gumi' : '구미', type: 'clinic', x: 63.8, y: 52.6, region: 'gyeongsang' },
+        { id: 'ulsan', name: language === 'en' ? 'Ulsan' : '울산', type: 'future', x: 74.2, y: 64.3, region: 'gyeongsang' },
+        { id: 'changwon', name: language === 'en' ? 'Changwon' : '창원', type: 'hospital', x: 63.2, y: 70.3, region: 'gyeongsang' },
+        { id: 'busan', name: language === 'en' ? 'Busan' : '부산', type: 'clinic', x: 70.4, y: 71.0, region: 'gyeongsang' },
     ];
 
     const regionsLeft = [
